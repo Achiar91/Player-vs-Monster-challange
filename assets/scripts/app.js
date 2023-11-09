@@ -124,6 +124,12 @@ function endRound() {
 
     if (currentMonsterHealth <= 0 || currentPlayerHealth <= 0) {
         reset();
+        writeToLog(
+            LOG_EVENT_GAME_OVER,
+            "GAME OVER",
+            currentMonsterHealth,
+            currentPlayerHealth
+        );
     }
 }
 
