@@ -28,8 +28,13 @@ let hasBonusLife = true;
 adjustHealthBars(chosenMaxLife);
 
 function writeToLog(event, value, monsterHealth, playerHealth) {
-    let logEntry;
-    switch (ev) {
+    let logEntry = {
+        event: event,
+        value: value,
+        finalMonsterHealth: monsterHealth,
+        finalPlayerHealth: playerHealth
+      };
+    switch (event) {
         case LOG_EVENT_PLAYER_ATTACK:
             logEntry.target = "monster";
             break;
